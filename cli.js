@@ -9,16 +9,21 @@ const init = async (argv) => {
     program.version(packagejson.version);
   
     program
-      .option('-f, --file', 'Import a folder')
+      .option('-file, --file', 'Import a folder')
       .parse(process.argv);
 
-    if (program.args.length < 2 || program.args.length > 3) {
-        console.log(program.args.length)
-        console.log("Wrong number of arguments, please input only a file or use -f for a folder name")
+      const args = verifyArgs(program.args)
+    launchServer(args)
+  };
+
+const verifyArgs = args => {
+    console.log(args.length)
+    if (args.length !== 2) {
+        console.log("Wrong number of arguments, please pass file/folder name and function name")
         return
     }
-    launchServer(program.args[1])
-  };
+    return args
+}
 
 init(process.argv)
 
