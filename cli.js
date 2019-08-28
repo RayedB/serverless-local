@@ -17,7 +17,7 @@ const init = async (argv) => {
         console.log("Wrong number of arguments, please input only a file or use -f for a folder name")
         return
     }
-    launchServer(program.args)
+    launchServer(program.args[1])
   };
 
 init(process.argv)
