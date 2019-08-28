@@ -2,11 +2,15 @@
   "name": "serverless-local",
   "version": "1.0.0",
   "description": "Run a serverless function locally and speed up your development",
-  "main": "server.js",
+  "main": "bin/cli.js",
   "scripts": {
     "test": "jest --runInBand --forceExit --config jest.config.js --coverage",
     "lint": "eslint --ext .js src",
-    "sll": "node cli.js"
+    "sll": "node bin/cli.js"
+  },
+  "preferGlobal": true,
+  "bin": {
+    "sll": "./bin/cli.js"
   },
   "repository": {
     "type": "git",
