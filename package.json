@@ -2,7 +2,7 @@
   "name": "serverless-local",
   "version": "1.0.0",
   "description": "Run a serverless function locally and speed up your development",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "jest --runInBand --forceExit --config jest.config.js --coverage",
     "lint": "eslint --ext .js src"
@@ -29,5 +29,8 @@
   "homepage": "https://github.com/RayedB/serverless-local#readme",
   "devDependencies": {
     "jest": "^24.9.0"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }
