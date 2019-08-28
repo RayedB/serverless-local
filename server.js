@@ -9,13 +9,11 @@ async function launchServer(file, func) {
 
   app.listen(PORT, () => {
     console.log(`Service has started on port ${PORT}`);
-
-    const fn = require(file);
-
-    fn[func]();
-
   });
 
+  const fn = require(file);
+
+  app.get('/', fn[func]);
 };
 
 module.exports = { launchServer }
