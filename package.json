@@ -4,7 +4,7 @@
   "description": "Run a serverless function locally and speed up your development",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -25,5 +25,8 @@
   "bugs": {
     "url": "https://github.com/RayedB/serverless-local/issues"
   },
-  "homepage": "https://github.com/RayedB/serverless-local#readme"
+  "homepage": "https://github.com/RayedB/serverless-local#readme",
+  "devDependencies": {
+    "jest": "^24.9.0"
+  }
 }
