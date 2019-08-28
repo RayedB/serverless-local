@@ -26,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/RayedB/serverless-local/issues"
   },
-  "homepage": "https://github.com/RayedB/serverless-local#readme"
+  "homepage": "https://github.com/RayedB/serverless-local#readme",
+  "devDependencies": {
+    "jest": "^24.9.0"
+  }
 }
