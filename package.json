@@ -4,7 +4,8 @@
   "description": "Run a serverless function locally and speed up your development",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --runInBand --forceExit --config jest.config.js --coverage",
+    "lint": "eslint --ext .js src"
   },
   "repository": {
     "type": "git",
