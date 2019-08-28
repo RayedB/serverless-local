@@ -1,19 +1,21 @@
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser');
 
 const PORT = process.env.PORT || 8080;
 
 const launchServer = async (file, func) => {
-  console.log(file)
   if (!file || !func) return;
 
   app.listen(PORT, () => {
     console.log(`Service has started on port ${PORT}`);
   });
 
-  const fn = require(file);
+  app.use(bodyParser.json());
 
-  app.get('/', fn[func]);
+  const fn = require(`./${file}`);
+
+  app.all('/', fn[func]);
 };
 
-module.exports = launchServer
+module.exports = launchServer;
