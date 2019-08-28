@@ -1,0 +1,29 @@
+{
+  "name": "serverless-local",
+  "version": "1.0.0",
+  "description": "Run a serverless function locally and speed up your development",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RayedB/serverless-local.git"
+  },
+  "keywords": [
+    "serverless",
+    "functions",
+    "lambda",
+    "google",
+    "cloud",
+    "functions",
+    "azure",
+    "functions"
+  ],
+  "author": "Rayed Benbrahim & Thomas Gosse",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RayedB/serverless-local/issues"
+  },
+  "homepage": "https://github.com/RayedB/serverless-local#readme"
+}
