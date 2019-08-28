@@ -4,8 +4,20 @@ const bodyParser = require('body-parser');
 
 const PORT = process.env.PORT || 8080;
 
-const launchServer = async (file, func) => {
-  if (!file || !func) return;
+function functionCaller(req, res, esModule, funcName) {
+  try {
+    const result = esModule[funcName](req, res);
+    if (!result) return;
+    res.send(result);
+  }
+  catch (e) {
+    console.error(e);
+    res.status(500).send({ message: 'an error occured while running your function... you should see logs for more info' });
+  }
+}
+
+const launchServer = async (file, funcName) => {
+  if (!file || !funcName) return;
 
   app.listen(PORT, () => {
     console.log(`Service has started on port ${PORT}`);
@@ -13,9 +25,9 @@ const launchServer = async (file, func) => {
 
   app.use(bodyParser.json());
 
-  const fn = require(`./${file}`);
+  const esModule = require(`./${file}`);
 
-  app.all('/', fn[func]);
+  app.all('/', (req, res) => functionCaller(req, res, esModule, funcName));
 };
 
 module.exports = launchServer;
