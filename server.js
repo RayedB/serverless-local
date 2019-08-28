@@ -3,7 +3,7 @@ const app = express();
 
 const PORT = process.env.PORT || 8080;
 
-function launchServer(file, func) {
+async function launchServer(file, func) {
 
   if (!file || !func) return;
 
@@ -17,3 +17,5 @@ function launchServer(file, func) {
   });
 
 };
+
+module.exports = { launchServer }
